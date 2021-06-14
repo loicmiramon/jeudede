@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Jeux de dé</title>
+  </head>
+  <body class="body bg-yellow-800">
+    <main class="main w-screen h-screen flex p-3 flex-row">
+      <section id="playerOne" class="bg-gray-100 w-3/6 flex flex-col justify-start pt-12">
+        <div class="flex flex-col items-center justify-center h-3/6">
+          <div class="flex flex-row justify-center items-center">
+            <h2 class="text-2xl text-gray-300 uppercase">player 1</h2>
+            <div class="redCircle w-3 h-3 rounded-full bg-red-500 m-3"></div>
+          </div>
+          <p class="text-6xl m-6 text-red-400 font-thin">
+            0
+          </p>
+        </div>
+        <div class="h-3/6 flex items-center justify-center ">
+          <div class="flex flex-col items-center justify-center bg-red-600 p-6">
+            <h2>current</h2>
+            <div id="current_player_one" class="text-white text-2xl">0</div>
+          </div>
+        </div>
+      </section>
+      <section id="playerTwo" class="bg-white w-3/6 flex flex-col justify-start pt-12">
+        <div class="flex flex-col items-center justify-center h-3/6">
+          <div class="flex flex-row-reverse justify-center items-center">
+            <h2 class="text-2xl text-gray-300 uppercase">player 2</h2>
+            <div class="redCircle w-3 h-3 rounded-full bg-red-500 m-3"></div>
+          </div>
+          <p class="text-6xl m-6 text-red-400 font-thin">
+            0
+          </p>
+        </div>
+        <div class="h-3/6 flex items-center justify-center ">
+          <div class="flex flex-col items-center justify-center bg-red-600 p-6">
+            <h2>current</h2>
+            <div class="text-white text-2xl">0</div>
+          </div>
+        </div>
+      </section>
+      <section class="new">
+        <div id="new_game" class="flex items-center justify-center">
+          <img class="w-6 m-3" src="images/chargement.svg" alt="new game">
+          <p class="uppercase text-sm">new game</p>
+        </div>
+      </section>
+      <!-----------------------------
+                  DICE
+      ----------------------------->
+      <section id="six" class="six dice bg-white flex border-2 border-gray-200 w-24 h-24 justify-around flex-col">
+        <div class="flex justify-between m-2">
+          <div class="w-3 h-3 rounded-full bg-red-600"></div>
+          <div class="w-3 h-3 rounded-full bg-red-600"></div>
+        </div>
+        <div class="flex justify-between m-2">
+          <div class="w-3 h-3 rounded-full bg-red-600"></div>
+          <div class="w-3 h-3 rounded-full bg-red-600"></div>
+        </div>
+        <div class="flex justify-between m-2">
+          <div class="w-3 h-3 rounded-full bg-red-600"></div>
+          <div class="w-3 h-3 rounded-full bg-red-600"></div>
+        </div>
+      </section>
+      <section id="five" class="five dice bg-white flex border-2 border-gray-200 w-24 h-24 justify-around flex-col">
+        <div class="flex justify-between m-2">
+          <div class="w-3 h-3 rounded-full bg-red-600"></div>
+          <div class="w-3 h-3 rounded-full bg-red-600"></div>
+        </div>
+        <div class="flex justify-center m-2">
+          <div class="w-3 h-3 rounded-full bg-red-600"></div>
+        </div>
+        <div class="flex justify-between m-2">
+          <div class="w-3 h-3 rounded-full bg-red-600"></div>
+          <div class="w-3 h-3 rounded-full bg-red-600"></div>
+        </div>
+      </section>
+      <section id="four" class="four dice bg-white flex border-2 border-gray-200 w-24 h-24 justify-around flex-col">
+        <div class="flex justify-between m-2">
+          <div class="w-3 h-3 rounded-full bg-red-600"></div>
+          <div class="w-3 h-3 rounded-full bg-red-600"></div>
+        </div>
+        <div class="flex justify-between m-2">
+          <div class="w-3 h-3 rounded-full bg-red-600"></div>
+          <div class="w-3 h-3 rounded-full bg-red-600"></div>
+        </div>
+      </section>
+      <section id="one" class="one dice bg-white flex border-2 border-gray-200 w-24 h-24 justify-around flex-col">
+        <div class="flex justify-center m-2">
+          <div class="w-3 h-3 rounded-full bg-red-600"></div>
+        </div>
+      </section>
+      <section id="three" class="three dice bg-white flex border-2 border-gray-200 w-24 h-24 justify-around flex-col">
+        <div class="flex justify-end m-2">
+          <div class="w-3 h-3 rounded-full bg-red-600"></div>
+        </div>
+        <div class="flex justify-center m-2">
+          <div class="w-3 h-3 rounded-full bg-red-600"></div>
+        </div>
+        <div class="flex justify-start m-2">
+          <div class="w-3 h-3 rounded-full bg-red-600"></div>
+        </div>
+      </section>
+      <section id="two" class="two dice bg-white flex border-2 border-gray-200 w-24 h-24 justify-around flex-col">
+        <div class="flex justify-end m-2">
+          <div class="w-3 h-3 rounded-full bg-red-600"></div>
+        </div>
+        <div class="flex justify-start m-2">
+          <div class="w-3 h-3 rounded-full bg-red-600"></div>
+        </div>
+      </section>
+      <section class="btnDice">
+        <div id="roll" class="flex items-center justify-center">
+          <img class="w-6 m-3" src="images/chargement.svg" alt="roll dice">
+          <p class="uppercase text-sm">roll dice</p>
+        </div>
+        <div id="hold" class="flex items-center justify-center">
+          <img class="w-6 m-3" src="images/telecharger.svg" alt="HOLD">
+          <p class="uppercase text-sm">hold</p>
+        </div>
+      </section>
+      </main>
+      <script src="app.js"></script>
+  </body>
+</html>

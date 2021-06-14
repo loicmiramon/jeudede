@@ -1,0 +1,133 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
+}
+
+.redCircle {
+  display: none;
+}
+
+@media screen and (min-width: 320px) and (max-width: 600px) {
+  .main {
+    position: relative;
+  }
+  
+  .btnDice {
+    position: absolute;
+    top: 83%;
+    left: 33%;
+  }
+
+  .new {
+    position: absolute;
+    top: 10%;
+    left: 33%;
+  }
+
+  .dice {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+  }
+
+  @media (orientation: landscape) {
+    .dice {
+      position: absolute;
+      top: 34%;
+      left: 41%;
+    }
+
+    .new {
+      position: absolute;
+      top: 10%;
+      left: 38%;
+    }
+
+    .btnDice {
+      position: absolute;
+      top: 65%;
+      left: 38%;
+    }
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+  .main {
+    position: relative;
+  }
+  
+  .btnDice {
+    position: absolute;
+    top: 85%;
+    left: 40%;
+  }
+
+  .new {
+    position: absolute;
+    top: 10%;
+    left: 41%;
+  }
+
+  .dice {
+    position: absolute;
+    top: 40%;
+    left: 44%;
+  }
+
+  @media (orientation: landscape) {
+    
+    .dice {
+      position: absolute;
+      top: 30%;
+      left: 45%;
+    }
+
+    .btnDice {
+      position: absolute;
+      top: 65%;
+      left: 41.5%;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .main {
+    position: relative;
+  }
+  
+  .btnDice {
+    position: absolute;
+    top: 85%;
+    left: 46.5%;
+  }
+
+  .new {
+    position: absolute;
+    top: 10%;
+    left: 46%;
+  }
+  
+  .dice {
+    position: absolute;
+    top: 40%;
+    left: 47%;
+  }
+
+  
+}
+
+.one,
+.two,
+.three,
+.four,
+.five,
+.six {
+  display: none;
+}
+
+.diceAdd {
+  display: flex;
+}
