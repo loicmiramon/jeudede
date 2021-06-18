@@ -10,6 +10,10 @@
   display: none;
 }
 
+.redCircle.addCircle {
+  display: block;
+}
+
 @media screen and (min-width: 320px) and (max-width: 600px) {
   .main {
     position: relative;
@@ -101,19 +105,19 @@
   .btnDice {
     position: absolute;
     top: 85%;
-    left: 46.5%;
+    left: 45.8%;
   }
 
   .new {
     position: absolute;
     top: 10%;
-    left: 46%;
+    left: 45.8%;
   }
   
   .dice {
     position: absolute;
     top: 40%;
-    left: 47%;
+    left: 47.4%;
   }
 
   
