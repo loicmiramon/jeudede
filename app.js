@@ -44,7 +44,6 @@ btnRollDice.addEventListener('click', () => {
         score[0] = roll;
       }
       currentPlayer[0].innerHTML = score[0];
-      console.log(score); 
     }
   } else if (circleRed[1].className === "redCircle w-3 h-3 rounded-full bg-red-500 m-3 addCircle") {
     if(roll === 0) {
@@ -63,7 +62,6 @@ btnRollDice.addEventListener('click', () => {
         score[1] = roll;
       }
       currentPlayer[1].innerHTML = score[1];
-      console.log(score);
     }
   }
 
