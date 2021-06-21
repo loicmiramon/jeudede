@@ -5,22 +5,24 @@ const btnHold = document.querySelector('#hold');
 const playerOne = document.querySelector('#playerOne');
 const playerTwo = document.querySelector('#playerTwo');
 
-/*
-const currentPlayerOne = document.querySelector('#current_player_one');
-const currentPlayerTwo = document.querySelector('#currentPlayerTwo');
-*/
 const currentPlayer = document.querySelectorAll('.current_player')
 
 const scorePlayer = document.querySelectorAll('.scorePlayer')
 const circleRed = document.querySelectorAll('.redCircle');
 
-
-
 const dice = document.querySelectorAll('.dice');
 const score = [0,0];
+const holdScore = [0,0]
 
 btnNewGame.addEventListener('click', () => {
-  circleRed[0].classList.add('addCircle');
+      circleRed[0].classList.add('addCircle');
+      circleRed[1].classList.remove('addCircle');
+      score[0] = 0;
+      score[1] = 0;
+      score[0].innerHTML = 0;
+      score[1].innerHTML = 0;
+      currentPlayer[0].innerHTML = 0;
+      currentPlayer[1].innerHTML = 0;     
 });
 
 btnRollDice.addEventListener('click', () => {
@@ -37,7 +39,7 @@ btnRollDice.addEventListener('click', () => {
       circleRed[1].classList.add('addCircle');
     } else {
       if(score[0] !== 0) {
-        score[0] = score[0] + roll
+        score[0] = score[0] + roll;
       } else {
         score[0] = roll;
       }
@@ -64,6 +66,7 @@ btnRollDice.addEventListener('click', () => {
       console.log(score);
     }
   }
+
   if(circleRed[0].className === "redCircle w-3 h-3 rounded-full bg-red-500 m-3 addCircle" || circleRed[1].className === "redCircle w-3 h-3 rounded-full bg-red-500 m-3 addCircle") {
     for(let i = 0 ; i < dice.length ; i++) {
       dice[i].classList.remove('diceAdd');
@@ -98,38 +101,43 @@ btnRollDice.addEventListener('click', () => {
 
 btnHold.addEventListener('click', () => {
   if(circleRed[0].className === "redCircle w-3 h-3 rounded-full bg-red-500 m-3 addCircle") {
-    scorePlayer[0].innerHTML = score[0];
+    holdScore[0] += score[0];
+    scorePlayer[0].innerHTML = holdScore[0];
     circleRed[0].classList.remove('addCircle');
     circleRed[1].classList.add('addCircle');
-    score[0] = score[0];
+    score[0] = 0;
     currentPlayer[0].innerHTML = 0;
   } else if (circleRed[1].className === "redCircle w-3 h-3 rounded-full bg-red-500 m-3 addCircle") {
-    scorePlayer[1].innerHTML = score[1];
+    holdScore[1] += score[1];
+    scorePlayer[1].innerHTML = holdScore[1];
     circleRed[1].classList.remove('addCircle');
     circleRed[0].classList.add('addCircle');
-    score[1] = score[1];
+    score[1] = 0;
     currentPlayer[1].innerHTML = 0;
   }
   alert('Point ajouté');
+  if(scorePlayer[0].textContent >= "100") {
+    alert('Le joueur 1 gagne avec un score de ' + score[0])
+    score[0] = 0;
+    holdScore[0] = 0;
+    currentPlayer[0].innerHTML = 0;
+    scorePlayer[0].innerHTML = 0;
+    for(let x = 0 ; x < circleRed.length ; x ++) {
+      circleRed[x].classList.remove('addCircle');
+    }
+  } else if (scorePlayer[1].textContent >= "100") {
+    alert('Le joueur 1 gagne avec un score de ' + score[0])
+    score[1] = 0;
+    holdScore[1] = 0;
+    currentPlayer[1].innerHTML = 0;
+    scorePlayer[1].innerHTML = 0;
+    for(let x = 0 ; x < circleRed.length ; x ++) {
+      circleRed[x].classList.remove('addCircle');
+    }
+  }
 });
 
-if(scorePlayer[0] >= 100) {
-  alert('Le joueur 1 gagne avec un score de ' + score[0])
-  score[0] = 0;
-  currentPlayer[0].innerHTML = 0;
-  scorePlayer[0].innerHTML = 0;
-  for(let x = 0 ; x < circleRed.length ; x ++) {
-    circleRed[x].classList.remove('addCircle');
-  }
-} else if (scorePlayer[1] >= 100) {
-  alert('Le joueur 1 gagne avec un score de ' + score[0])
-  score[1] = 0;
-  currentPlayer[1].innerHTML = 0;
-  scorePlayer[1].innerHTML = 0;
-  for(let x = 0 ; x < circleRed.length ; x ++) {
-    circleRed[x].classList.remove('addCircle');
-  }
-}
+
 
 
 
