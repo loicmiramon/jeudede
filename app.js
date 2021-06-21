@@ -116,8 +116,8 @@ btnHold.addEventListener('click', () => {
     currentPlayer[1].innerHTML = 0;
   }
   alert('Point ajouté');
-  if(scorePlayer[0].textContent >= "100") {
-    alert('Le joueur 1 gagne avec un score de ' + score[0])
+  if(holdScore[0] >= 100) {
+    alert('Le joueur 1 gagne avec un score de ' + holdScore[0])
     score[0] = 0;
     holdScore[0] = 0;
     currentPlayer[0].innerHTML = 0;
@@ -125,8 +125,8 @@ btnHold.addEventListener('click', () => {
     for(let x = 0 ; x < circleRed.length ; x ++) {
       circleRed[x].classList.remove('addCircle');
     }
-  } else if (scorePlayer[1].textContent >= "100") {
-    alert('Le joueur 1 gagne avec un score de ' + score[0])
+  } else if (holdScore[1] >= 100) {
+    alert('Le joueur 1 gagne avec un score de ' + holdScore[0])
     score[1] = 0;
     holdScore[1] = 0;
     currentPlayer[1].innerHTML = 0;
