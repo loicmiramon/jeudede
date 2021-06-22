@@ -19,10 +19,15 @@ btnNewGame.addEventListener('click', () => {
       circleRed[1].classList.remove('addCircle');
       score[0] = 0;
       score[1] = 0;
-      score[0].innerHTML = 0;
-      score[1].innerHTML = 0;
+      holdScore[0] = 0;
+      holdScore[1] = 0;
+      scorePlayer[0].innerHTML = 0;
+      scorePlayer[1].innerHTML = 0;
       currentPlayer[0].innerHTML = 0;
-      currentPlayer[1].innerHTML = 0;     
+      currentPlayer[1].innerHTML = 0;  
+      for(let y = 0 ; y < dice.length ; y++) {
+        dice[y].classList.remove('diceAdd')
+      }   
 });
 
 btnRollDice.addEventListener('click', () => {
@@ -32,7 +37,6 @@ btnRollDice.addEventListener('click', () => {
       roll = roll + 1;
     }
     if(roll === 1) {
-      console.log('au tour de joueur deux')
       currentPlayer[0].innerHTML = "0";
       score[0] = 0;
       circleRed[0].classList.remove('addCircle');
@@ -113,7 +117,6 @@ btnHold.addEventListener('click', () => {
     score[1] = 0;
     currentPlayer[1].innerHTML = 0;
   }
-  alert('Point ajouté');
   if(holdScore[0] >= 100) {
     alert('Le joueur 1 gagne avec un score de ' + holdScore[0])
     score[0] = 0;
