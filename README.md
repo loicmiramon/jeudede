@@ -7,4 +7,4 @@ Projet développé pour une évaluation de formation utilisant les langages suiv
 - Javascript
 - Tailwind CSS
 
-Lien du site : https://jeudede.netlify.app
+Lien du projet : https://jeudede.netlify.app
